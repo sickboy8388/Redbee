@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-apinator — BOLA/IDOR Automated Tester
+redbee — BOLA/IDOR Automated Tester
 ======================================
 Tests Broken Object Level Authorization by comparing responses
 from two different users on the same endpoints/IDs.
@@ -25,7 +25,7 @@ USER_B_TOKEN = "eyJhbGciOiJIUzI1NiJ9..."   # attacker token
 DELAY        = 0.2                          # seconds between requests (avoids rate limiting)
 TIMEOUT      = 10
 
-# Endpoint da testare — {id} verrà sostituito con ogni ID della lista
+# Endpoints to test — {id} will be replaced with each ID from the list
 ENDPOINTS = [
     "/users/{id}/profile",
     "/users/{id}/documents",
@@ -73,7 +73,7 @@ def test_bola(endpoint_template: str, ids: Generator) -> list[dict]:
         if r_a is None or r_b is None:
             continue
 
-        # Casi interessanti
+        # Interesting cases
         if r_b.status_code == 200:
             if r_a.status_code == 200 and r_b.text == r_a.text:
                 status = "🔴 BOLA CONFIRMED"
@@ -102,7 +102,7 @@ def test_bola(endpoint_template: str, ids: Generator) -> list[dict]:
 
 def run():
     print("=" * 60)
-    print("  apinator — BOLA/IDOR Tester")
+    print("  redbee — BOLA/IDOR Tester")
     print("=" * 60)
     print(f"  Target  : {BASE_URL}")
     print(f"  Endpoints: {len(ENDPOINTS)}")

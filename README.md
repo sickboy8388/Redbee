@@ -2,12 +2,12 @@
 <div align="center">
 
 ```
- █████╗ ██████╗ ██╗███╗   ██╗ █████╗ ████████╗ ██████╗ ██████╗
-██╔══██╗██╔══██╗██║████╗  ██║██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
-███████║██████╔╝██║██╔██╗ ██║███████║   ██║   ██║   ██║██████╔╝
-██╔══██║██╔═══╝ ██║██║╚██╗██║██╔══██║   ██║   ██║   ██║██╔══██╗
-██║  ██║██║     ██║██║ ╚████║██║  ██║   ██║   ╚██████╔╝██║  ██║
-╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+██████╗ ███████╗██████╗ ██████╗ ███████╗███████╗
+██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝
+██████╔╝█████╗  ██║  ██║██████╔╝█████╗  █████╗  
+██╔══██╗██╔══╝  ██║  ██║██╔══██╗██╔══╝  ██╔══╝  
+██║  ██║███████╗██████╔╝██████╔╝███████╗███████╗
+╚═╝  ╚═╝╚══════╝╚═════╝ ╚═════╝ ╚══════╝╚══════╝
 ```
 
 ### 🔐 The API Penetration Testing Playbook
@@ -29,9 +29,8 @@
 ---
 
 ## 🤔 What is Apinator?
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/fcc8b125-fa20-42e9-8318-a6089b749609" />
 
-**Apinator** is a complete operational guide for Security Engineers performing penetration tests on REST and GraphQL API applications. No useless theory — just ready-to-use commands, free tools, and techniques that actually work.
+**Redbee** is a complete operational guide for Security Engineers performing penetration tests on REST and GraphQL API applications. No useless theory — just ready-to-use commands, free tools, and techniques that actually work.
 
 It covers the full cycle: from passive reconnaissance to final reporting, following the **OWASP API Security Top 10 2023**.
 
@@ -47,7 +46,7 @@ ffuf -u https://target.com/api/FUZZ -w api-wordlist.txt -mc 200,401,403
 ## 🗂 Repository Structure
 
 ```
-apinator/
+redbee/
 ├── README.md                  ← you are here
 ├── LICENSE
 ├── CONTRIBUTING.md
@@ -94,8 +93,8 @@ git clone https://github.com/sqlmapproject/sqlmap
 ### Open the interactive guide
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/apinator
-cd apinator
+git clone https://github.com/YOUR_USERNAME/redbee
+cd redbee
 open guide/api-pentest-guide.html        # macOS
 xdg-open guide/api-pentest-guide.html   # Linux
 ```

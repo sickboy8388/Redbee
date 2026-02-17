@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-apinator — Race Condition Tester
+redbee — Race Condition Tester
 ==================================
-Invia N richieste concorrenti verso un endpoint per testare
-race condition (TOCTOU, double-spend, coupon abuse, ecc.).
+Sends N concurrent requests to an endpoint to test
+race conditions (TOCTOU, double-spend, coupon abuse, etc.).
 
-Dipendenze:
+Dependencies:
     pip3 install aiohttp --break-system-packages
 
 Usage:
@@ -23,7 +23,7 @@ TARGET_URL   = "https://target.com/api/v1/coupon/redeem"
 TOKEN        = "Bearer YOUR_TOKEN_HERE"
 METHOD       = "POST"                        # GET, POST, PUT, PATCH
 PAYLOAD      = {"coupon_code": "DISCOUNT50"} # body JSON
-CONCURRENCY  = 25                            # richieste parallele
+CONCURRENCY  = 25                            # parallel requests
 TIMEOUT      = 15
 
 HEADERS = {
@@ -64,12 +64,12 @@ async def send_request(session: aiohttp.ClientSession, idx: int) -> dict:
 
 async def main():
     print("=" * 60)
-    print("  apinator — Race Condition Tester")
+    print("  redbee — Race Condition Tester")
     print("=" * 60)
     print(f"  Target      : {TARGET_URL}")
     print(f"  Method      : {METHOD}")
     print(f"  Payload     : {json.dumps(PAYLOAD)}")
-    print(f"  Concurrency : {CONCURRENCY} richieste parallele")
+    print(f"  Concurrency : {CONCURRENCY} parallel requests")
     print()
     print(f"[*] Firing {CONCURRENCY} requests simultaneously...")
     print()
@@ -79,7 +79,7 @@ async def main():
         tasks = [send_request(session, i) for i in range(CONCURRENCY)]
         await asyncio.gather(*tasks)
 
-    # ── Analisi risultati ────────────────────────────────────────────
+    # ── Results analysis ────────────────────────────────────────────
     print()
     print("=" * 60)
     print("  ANALISI")
@@ -96,16 +96,16 @@ async def main():
     if len(success) > 1:
         print()
         print("  🔴 RACE CONDITION RILEVATA!")
-        print(f"     {len(success)} richieste hanno ricevuto 200 OK — l'operazione")
-        print("     è stata eseguita più volte. Verifica manuale consigliata.")
+        print(f"     {len(success)} requests received 200 OK — the operation")
+        print("     was executed multiple times. Manual review recommended.")
     elif len(success) == 1:
         print()
-        print("  ✅ Solo una richiesta ha avuto successo — comportamento corretto.")
+        print("  ✅ Only one request succeeded — correct behavior.")
     else:
         print()
-        print("  ℹ️  Nessun 200 ricevuto — endpoint potrebbe essere protetto o down.")
+        print("  ℹ️  No 200 received — endpoint may be protected or down.")
 
-    # Salva output completo
+    # Save full output
     with open("race_results.json", "w") as f:
         json.dump(sorted(results, key=lambda x: x["id"]), f, indent=2)
     print()

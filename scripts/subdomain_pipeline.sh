@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# apinator — Subdomain & API Recon Pipeline
+# redbee — Subdomain & API Recon Pipeline
 # ============================================================
 # Prerequisites: subfinder, amass, dnsx, httpx, katana, gau
 #
@@ -22,7 +22,7 @@ OUTDIR="recon_${TARGET}_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$OUTDIR"
 
 echo "============================================================"
-echo "  apinator — Recon Pipeline"
+echo "  redbee — Recon Pipeline"
 echo "  Target : $TARGET"
 echo "  Output : $OUTDIR/"
 echo "============================================================"
