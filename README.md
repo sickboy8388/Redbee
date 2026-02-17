@@ -28,7 +28,8 @@
 
 ---
 
-## 🤔 What is Apinator?
+## 🤔 What is Redbee?
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/3b4b407f-394e-49da-9d3f-4fceb36589dc" />
 
 **Redbee** is a complete operational guide for Security Engineers performing penetration tests on REST and GraphQL API applications. No useless theory — just ready-to-use commands, free tools, and techniques that actually work.
 
