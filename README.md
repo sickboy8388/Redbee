@@ -29,6 +29,7 @@
 ---
 
 ## 🤔 What is Apinator?
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/fcc8b125-fa20-42e9-8318-a6089b749609" />
 
 **Apinator** is a complete operational guide for Security Engineers performing penetration tests on REST and GraphQL API applications. No useless theory — just ready-to-use commands, free tools, and techniques that actually work.
 
