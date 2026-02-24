@@ -1,4 +1,4 @@
-# Contributing to Apinator
+# Contributing to Redbee
 
 Thanks for wanting to contribute! 🎉
 
